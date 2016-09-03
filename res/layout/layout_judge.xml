@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp" >
+
+    <RadioButton
+        android:id="@+id/rbCheckRight"
+        style="@style/rbA"
+        android:text="正确" />
+
+    <RadioButton
+        android:id="@+id/rbCheckWrong"
+        style="@style/rbB"
+        android:text="错误" />
+
+</RadioGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView style="@style/tvMenu"
+                  android:text="余票查询"
+                  android:id="@+id/tvYp"
+                />
+        <TextView style="@style/tvMenu"
+                  android:text="车次查询" android:id="@+id/tvCc"/>
+        <TextView style="@style/tvMenu"
+                  android:text="起售时间" android:id="@+id/tvQs"/>
+        <TextView style="@style/tvMenu"
+                  android:text="铁路技能答题" android:id="@+id/Tljn"/>
+        <TextView style="@style/tvMenu"
+                  android:text="答题铁路排行榜" android:id="@+id/tvDttl"/>
+        <TextView style="@style/tvMenu"
+                  android:text="模块化教学-职工绑定" android:id="@+id/tvMkhjx"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView style="@style/tvMenu"
+                      android:text="预售期" android:id="@+id/tvYsq"/>
+            <TextView style="@style/tvMenu"
+                      android:text="今日头条" android:id="@+id/tvJrtt"/>
+            <TextView style="@style/tvMenu"
+                      android:text="铁路头条" android:id="@+id/tvTltt"/>
+            <TextView style="@style/tvMenu"
+                      android:text="社会头条" android:id="@+id/tvShtt"/>
+
+        </LinearLayout>
+          <TextView style="@style/tvMenu"
+                  android:text="一键分享" android:id="@+id/tvShare"/>
+    </LinearLayout>
+</ScrollView>

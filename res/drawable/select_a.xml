@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+   
+    <item android:drawable="@drawable/jiakao_practise_a_n_day" android:state_checked="false"/>
+    <item android:drawable="@drawable/jiakao_practise_a_s_day" android:state_checked="true"/>
+     <item android:drawable="@drawable/jiakao_practise_a_s_day" android:state_pressed="true"/>
+    <item android:drawable="@drawable/jiakao_practise_a_n_day" android:state_pressed="false"/>
+
+</selector>

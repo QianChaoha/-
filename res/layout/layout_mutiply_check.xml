@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRb"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp" >
+
+    <CheckBox
+        android:id="@+id/cbCheck0"
+        style="@style/rbA"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/cbCheck1"
+        style="@style/rbB"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/cbCheck2"
+        style="@style/rbC"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/cbCheck3"
+        style="@style/rbD"
+        android:visibility="gone" />
+
+</LinearLayout>
