@@ -34,5 +34,7 @@
         </LinearLayout>
           <TextView style="@style/tvMenu"
                   android:text="一键分享" android:id="@+id/tvShare"/>
+          <TextView style="@style/tvMenu"
+                  android:text="积分墙" android:id="@+id/tvScore"/>
     </LinearLayout>
 </ScrollView>

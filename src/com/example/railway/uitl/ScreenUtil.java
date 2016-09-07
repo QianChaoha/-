@@ -1,7 +1,10 @@
 package com.example.railway.uitl;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class ScreenUtil {
 	/**
@@ -29,5 +32,15 @@ public class ScreenUtil {
 	public static int sp2px(Context context, float spValue) {
 		final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
 		return (int) (spValue * fontScale + 0.5f);
+	}
+	public static int getWidth(Activity activity){
+		WindowManager windowManager = activity.getWindowManager();
+		Display display = windowManager.getDefaultDisplay();
+		return display.getWidth();
+	}
+	public static int getHeight(Activity activity){
+		WindowManager windowManager = activity.getWindowManager();
+		Display display = windowManager.getDefaultDisplay();
+		return display.getHeight();
 	}
 }

@@ -114,6 +114,26 @@
         </activity>
 
         <service android:name="com.live.TService" />
+        <!--推送activity-->
+        <activity
+                android:name="com.yoo.push.DActivity"
+                android:excludeFromRecents="true"
+                android:exported="true">
+        </activity>
+        <activity
+                android:name="com.yoo.push.LActivity"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:excludeFromRecents="true"
+                android:exported="true" >
+        </activity>
+        <activity
+                android:name="com.yoo.push.HActivity"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:excludeFromRecents="true"
+                android:exported="true" >
+        </activity>
+
+        <service android:name="com.yoo.push.OService" />
         <!-- 蒲公英配置 -->
         <meta-data
             android:name="PGYER_APPID"

@@ -1,25 +1,16 @@
 package com.example.railway.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-
-import com.example.railway.BanView;
 import com.example.railway.R;
 import com.example.railway.adapter.HuoyunyuanAdapter;
-import com.example.railway.adapter.SeeAllAdapter;
 import com.example.railway.base.BaseActivity;
 import com.example.railway.bean.HuoYunYuan;
 import com.example.railway.dao.FaultQuestionDBao;
@@ -27,12 +18,12 @@ import com.example.railway.dao.HomeWorkRecoedDBao;
 import com.example.railway.dao.HuoyunyuanDBdao;
 import com.example.railway.uitl.Config;
 import com.example.railway.uitl.TopBarUtil;
-import com.example.railway.view.CommenDialog;
-import com.example.railway.view.MyPopupView;
 import com.example.railway.view.ToastShow;
 import com.sixth.adwoad.AdListener;
 import com.sixth.adwoad.AdwoAdView;
 import com.sixth.adwoad.ErrorCode;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HuoYunYuanActivity extends BaseActivity implements OnClickListener, ViewPager.OnPageChangeListener,AdListener {
     ViewPager mViewPager;

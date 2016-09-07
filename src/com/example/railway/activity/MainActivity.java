@@ -22,17 +22,12 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 import com.example.railway.BaMan;
 import com.example.railway.BanView;
 import com.example.railway.R;
-import com.example.railway.Tools;
 import com.example.railway.base.BaseActivity;
-import com.example.railway.base.BaseListView;
 import com.example.railway.dao.HuoyunyuanDBdao;
 import com.example.railway.uitl.*;
 import com.example.railway.view.CircleImageView;
 import com.example.railway.view.Flowlayout;
 import com.live.TMan;
-import com.sixth.adwoad.AdListener;
-import com.sixth.adwoad.AdwoAdView;
-import com.sixth.adwoad.ErrorCode;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 	private static final String[] mContents = new String[] { "电瓶叉车司机", "货运安全员", "货运核算员", "货运计划员", "货运起重工", "货运调度员", "货运员", "货运值班员", "门吊司机", "内燃叉车司机",
@@ -55,8 +50,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			"http://wx.tielu5.com/user/newslist.aspx?type=sh" };
 	public static String[] menuContent = new String[] { "余票查询", "车次查询", "起售时间", "铁路技能答题", "模块化教学-职工绑定(合作单位)", "预售期", "答题铁路排行榜", "今日头条", "铁路头条",
 			"社会头条" };
-	LinearLayout menuRight;
-	TextView tvYp, tvCc, tvQs, Tljn, tvDttl, tvMkhjx, tvYsq, tvJrtt, tvTltt, tvShtt, tvShare;
+	LinearLayout menuLeft,menuRight;
+	TextView tvYp, tvCc, tvQs, Tljn, tvDttl, tvMkhjx, tvYsq, tvJrtt, tvTltt, tvShtt, tvScore,tvShare;
 	private RelativeLayout mLayout;
 	private TMan tMan;//插屏
 	@Override
@@ -85,6 +80,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		tvTltt = (TextView) menuContent.findViewById(R.id.tvTltt);
 		tvShtt = (TextView) menuContent.findViewById(R.id.tvShtt);
 		tvShare = (TextView) menuContent.findViewById(R.id.tvShare);
+		tvScore = (TextView) menuContent.findViewById(R.id.tvScore);
 		tvYp.setOnClickListener(this);
 		tvCc.setOnClickListener(this);
 		tvQs.setOnClickListener(this);
@@ -96,14 +92,20 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		tvTltt.setOnClickListener(this);
 		tvShtt.setOnClickListener(this);
 		tvShare.setOnClickListener(this);
+		tvScore.setOnClickListener(this);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.id_drawerLayout);
-		menuRight = (LinearLayout) findViewById(R.id.menuRight);
-		menuRight.addView(menuContent);
+		menuLeft = (LinearLayout) findViewById(R.id.menuLeft);
+		menuLeft.addView(menuContent);
 		mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.RIGHT);
 		rightMenuLinearLayout = (LinearLayout) mDrawerLayout.getChildAt(1);
 		myInfo = (CircleImageView) findViewById(R.id.myInfo);
 		myInfo.setOnClickListener(this);
-		new TopBarUtil(this).setTitle("路考宝典").setLeftImageViewVisiable(View.GONE).setRightImageView(R.drawable.user, new OnClickListener() {
+		new TopBarUtil(this).setTitle("路考宝典").setLeftImageViewId(R.drawable.user).setLeftImageView(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+			}
+		}).setRightImageView(R.drawable.icon_more, new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -234,7 +236,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		Intent intent = new Intent(this, NetHomeWorkActivity.class);
 		switch (v.getId()) {
 		case R.id.myInfo:
-			closeRightMenu();
+			intent=new Intent(this, NetHomeWorkActivity.class);
 			break;
 		case R.id.tvYp:
 			intent.putExtra("url", menuUrl[0]);
@@ -270,11 +272,14 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			intent = null;
 			showShare();
 			break;
+		case R.id.tvScore:
+//			intent= new Intent(this, NetHomeWorkActivity.class);
+			break;
 
 		default:
 			break;
 		}
-		if (intent != null && intent.getExtras() != null) {
+		if (intent != null) {
 			startActivity(intent);
 		}
 	}
