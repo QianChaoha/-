@@ -17,4 +17,5 @@ public class Config {
      * 网络和屏幕状态变更将会触发请求，这时将不受定时控制）；
     isTiming值为false时，表示只在该方法被调用时请求广告（主动请求广告，无其他触发条件）。*/
     public static final boolean JU_PUSH=false;
+    public static final String HYY_TITLE1="hyy_title1";
 }

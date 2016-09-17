@@ -10,6 +10,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.AsyncTask;
 import android.support.v4.widget.DrawerLayout;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -201,10 +202,38 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 				list = er.getExcelContent();
 
 				HuoyunyuanDBdao huoyunyuanDBdao = new HuoyunyuanDBdao(MainActivity.this);
+				String title1="";
+				String title2="";
+				String title3="";
+				String title[]=null;
+				StringBuffer title1Buffer=new StringBuffer();
 				for (int i = 1; i < list.size(); i++) {
-					huoyunyuanDBdao.add(list.get(i)[0], list.get(i)[1], list.get(i)[2], list.get(i)[3], list.get(i)[4], list.get(i)[5],
-							list.get(i)[6], list.get(i)[7], list.get(i)[8], list.get(i)[9], list.get(i)[10]);
+					 title=list.get(i)[10].split(">");
+					if (title!=null){
+						if (title.length>0){
+							title1=title[0];
 
+							if (!title1Buffer.toString().contains(title1)){
+								//将第一组显示的标题加到title1Buffer
+								title1Buffer.append(title1+",");
+							}
+						}
+						if (title.length>1){
+							title2=title[1];
+						}
+						if (title.length>2){
+							title3=title[2];
+						}
+					}
+
+					huoyunyuanDBdao.add(list.get(i)[0], list.get(i)[1], list.get(i)[2], list.get(i)[3], list.get(i)[4], list.get(i)[5],
+							list.get(i)[6], list.get(i)[7], list.get(i)[8], list.get(i)[9], list.get(i)[10],title1,title2,title3);
+
+				}
+				String title1Str=title1Buffer.toString();
+				if (!TextUtils.isEmpty(title1Str)){
+					title1Str=title1Str.endsWith(",")?title1Str.substring(0,title1Str.length()-1):title1Str;
+					getSharedPreferences("config",MODE_PRIVATE).edit().putString(Config.HYY_TITLE1,title1Str).commit();
 				}
 
 			} catch (Exception e) {

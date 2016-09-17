@@ -82,7 +82,7 @@ public class HuoyunyuanDBdao {
 	 * @param packagename
 	 */
 	public void add(String id, String type, String content, String check0, String check1, String check2, String check3, String answer, String order,
-			String nandu, String from) {
+			String nandu, String from,String title1,String title2,String title3) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		double doubleId = Double.valueOf(id);
@@ -95,6 +95,9 @@ public class HuoyunyuanDBdao {
 		values.put("check2", check2);
 		values.put("check3", check3);
 		values.put("answer", answer);
+		values.put("title1", title1);
+		values.put("title2", title2);
+		values.put("title3", title3);
 		double doubleOrder = Double.valueOf(order);
 		int intOrder = (int) doubleOrder;
 		values.put("order_hyu", intOrder);
