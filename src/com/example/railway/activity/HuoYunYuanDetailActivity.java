@@ -46,7 +46,7 @@ public class HuoYunYuanDetailActivity extends BaseActivity implements OnClickLis
     RelativeLayout rlContent;
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_huoyunyuan;
+        return R.layout.activity_huoyunyuan_detail;
     }
 
     @Override

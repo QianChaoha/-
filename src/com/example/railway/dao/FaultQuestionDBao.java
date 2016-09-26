@@ -2,12 +2,10 @@ package com.example.railway.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.railway.base.db.HuoyunyuanOperHelper;
-import com.example.railway.bean.HuoYunYuan;
+import com.example.railway.db.HuoyunyuanOperHelper;
 
 /**
  * Title: Description: Company:

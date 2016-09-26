@@ -1,4 +1,4 @@
-package com.example.railway.base.db;
+package com.example.railway.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
